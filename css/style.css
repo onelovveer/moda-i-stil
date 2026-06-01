@@ -1,0 +1,438 @@
+/* =========================================
+   БАЗОВЫЙ СБРОС И НАСТРОЙКИ
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #f8f9fa;
+    width: 100%;
+    overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* Обёртка */
+.wrapper { min-height: 100vh; display: flex; flex-direction: column; width: 100%; overflow-x: hidden; }
+
+/* =========================================
+   БОКОВОЕ МЕНЮ (ВЫЕЗД СЛЕВА)
+   ========================================= */
+#menu__toggle { opacity: 0; position: absolute; width: 0; height: 0; }
+#sub-menu-toggle { opacity: 0; position: absolute; width: 0; height: 0; }
+
+.menu__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 30px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1002;
+    transition: 0.3s;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition-duration: .25s;
+    border-radius: 2px;
+}
+.menu__btn > span::before { content: ''; top: -8px; }
+.menu__btn > span::after { content: ''; top: 8px; }
+
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #1a1a1a;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+    transition-duration: .3s;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.menu__item {
+    display: block;
+    padding: 15px 24px;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition-duration: .25s;
+    border-bottom: 1px solid #333;
+}
+.menu__item:hover {
+    background-color: #333;
+    color: #C5A059;
+}
+
+.menu__submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #111;
+}
+
+#sub-menu-toggle:checked ~ .menu__submenu {
+    display: block;
+}
+
+.menu__item--sub {
+    padding-left: 40px;
+    font-size: 16px;
+    color: #ccc;
+    border-bottom: 1px solid #222;
+}
+.menu__item--sub:hover {
+    color: #C5A059;
+    background-color: #222;
+}
+
+.menu__item--has-sub {
+    cursor: pointer;
+}
+
+#menu__toggle:checked ~ .menu__btn > span { transform: rotate(45deg); }
+#menu__toggle:checked ~ .menu__btn > span::before { top: 0; transform: rotate(0deg); }
+#menu__toggle:checked ~ .menu__btn > span::after { top: 0; transform: rotate(90deg); }
+#menu__toggle:checked ~ .menu__box { visibility: visible; left: 0; }
+
+/* =========================================
+   ШАПКА САЙТА
+   ========================================= */
+.header, .main-nav, .footer { width: 100%; position: relative; }
+
+.header { background: #1a1a1a; color: #fff; padding: 0; }
+.header-inner { 
+    max-width: 1200px; margin: 0 auto; padding: 0 15px; 
+    display: flex; justify-content: space-between; align-items: center; 
+    height: 60px; width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.site-name {
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.logo-link:hover .site-name {
+    color: #C5A059;
+}
+
+.header-right { display: flex; align-items: center; gap: 30px; }
+.header-contact a { color: #ccc; font-size: 0.9rem; font-weight: 500; }
+.header-contact a:hover { color: #C5A059; }
+
+/* Навигация */
+.main-nav { background: #2c2c2c; position: relative; z-index: 100; }
+.nav-inner { 
+    max-width: 1200px; margin: 0 auto; padding: 0 15px; 
+    display: flex; justify-content: center; position: relative; width: 100%;
+}
+.nav-list { display: flex; }
+.nav-item { position: relative; }
+.nav-link {
+    display: block; padding: 15px 20px; color: #eee; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 1.5px; position: relative;
+}
+.nav-link::after {
+    content: ''; position: absolute; bottom: 10px; left: 0; width: 0; height: 2px;
+    background: #C5A059; transition: width 0.3s ease;
+}
+.nav-link:hover, .nav-item:hover > .nav-link { background: transparent; color: #fff; }
+.nav-link:hover::after { width: 100%; }
+
+.submenu { 
+    position: absolute; top: 100%; left: 0; background: #333; min-width: 220px; 
+    display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 100; 
+}
+.nav-item:hover > .submenu { display: block; }
+.submenu .nav-link { 
+    padding: 12px 20px; border-bottom: 1px solid #444; font-size: 0.95em; 
+    text-transform: none; letter-spacing: normal; 
+}
+.submenu .nav-link:last-child { border-bottom: none; }
+.submenu .nav-link::after { display: none; }
+
+/* Контент + Сайдбар */
+.content-area { 
+    max-width: 1200px; margin: 25px auto; padding: 0 15px; 
+    display: flex; gap: 25px; flex: 1; 
+}
+.main { flex: 3; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.sidebar { flex: 1; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); height: fit-content; }
+.sidebar h3 { margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #eaeaea; }
+.sidebar ul li { margin: 10px 0; }
+.sidebar a { color: #0056b3; }
+.sidebar a:hover { text-decoration: underline; }
+
+/* Типографика */
+.main h1 { font-size: 2rem; margin-bottom: 15px; color: #111; }
+.main h2 { font-size: 1.5rem; margin: 25px 0 10px; }
+.main p { margin-bottom: 15px; text-align: justify; }
+.main img.content-img { margin: 15px 0; border-radius: 6px; }
+
+/* =========================================
+   ПРЕМИАЛЬНАЯ ФОРМА ВХОДА (КОМПАКТНАЯ ВЕРСИЯ)
+   ========================================= */
+.auth-section-full {
+    position: relative;
+    background: linear-gradient(145deg, #1e1e1e 0%, #2a2a2a 100%);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    border-radius: 16px;
+    padding: 30px 40px; /* Уменьшены вертикальные отступы */
+    margin: 30px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    width: 100%;
+}
+.auth-section-full::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, #C5A059, transparent);
+}
+.auth-container {
+    max-width: 550px; /* Чуть уже для визуального баланса */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.auth-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.75rem; /* Компактнее */
+    font-weight: 700;
+    margin: 0 0 5px;
+    letter-spacing: 0.5px;
+}
+.auth-subtitle {
+    text-align: center;
+    color: #888888;
+    font-size: 0.95rem;
+    margin: 0 0 20px; /* Уменьшен отступ */
+}
+.auth-form-wide { width: 100%; }
+.auth-field {
+    margin-bottom: 15px; /* Уменьшен вертикальный разрыв */
+    position: relative;
+}
+.auth-field label {
+    display: block;
+    color: #aaaaaa;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+.auth-field:focus-within label { color: #C5A059; }
+.auth-input {
+    width: 100%;
+    padding: 12px 16px; /* Поля стали ниже */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+.auth-input::placeholder { color: #555555; }
+.auth-input:focus {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #C5A059;
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+.auth-submit-btn {
+    width: 100%;
+    padding: 14px; /* Кнопка стала ниже */
+    background: linear-gradient(135deg, #C5A059 0%, #b08d4a 100%);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Уменьшен отступ до кнопки */
+}
+.auth-submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.5s ease;
+}
+.auth-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.35);
+}
+.auth-submit-btn:hover::before { left: 100%; }
+.auth-submit-btn:active { transform: translateY(0); }
+.auth-links {
+    text-align: center;
+    margin-top: 15px; /* Компактнее */
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.auth-link {
+    color: #777777;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.auth-link:hover { color: #C5A059; text-decoration: underline; }
+.auth-deco {
+    position: absolute;
+    border: 2px solid rgba(197, 160, 89, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.auth-deco-1 { width: 250px; height: 250px; top: -80px; right: -80px; }
+.auth-deco-2 { width: 160px; height: 160px; bottom: -60px; left: -60px; transform: rotate(45deg); border-radius: 16px; }
+
+@media (max-width: 768px) {
+    .auth-section-full { margin: 20px 15px; padding: 25px 20px; }
+    .auth-title { font-size: 1.5rem; }
+    .auth-input { padding: 11px 14px; font-size: 0.95rem; }
+    .auth-submit-btn { padding: 13px; font-size: 0.95rem; }
+}
+/* Галерея */
+.slider-container { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #111; }
+.slider-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.slider-track::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; scroll-snap-align: start; position: relative; }
+.slide a { display: block; width: 100%; }
+.slide img { width: 100%; height: auto; object-fit: cover; }
+.slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 10px; text-align: center; }
+.slider-controls { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
+.slider-btn { background: #333; color: #fff; border: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; }
+.slider-btn:hover { background: #555; }
+
+/* Футер */
+.footer { background: #111111; color: #aaa; padding: 30px 0 15px; margin-top: auto; }
+.footer-inner { 
+    max-width: 1200px; margin: 0 auto; padding: 0 15px; 
+    display: flex; flex-wrap: wrap; gap: 30px; width: 100%;
+}
+.footer-col { flex: 1; min-width: 200px; }
+.footer-col h4 { color: #C5A059; margin-bottom: 12px; font-size: 1.1em; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col a { display: block; margin: 6px 0; color: #ccc; }
+.footer-col a:hover { color: #C5A059; text-decoration: none; }
+.footer-bottom { 
+    width: 100%; text-align: center; margin-top: 25px; 
+    padding-top: 15px; border-top: 1px solid #333; font-size: 0.9em; 
+}
+
+/* 404 страница */
+.error-container {
+    min-height: 80vh; display: flex; flex-direction: column; justify-content: center;
+    align-items: center; background: #ffffff; padding: 40px 20px; text-align: center; position: relative;
+}
+.error-content { max-width: 800px; padding: 20px; }
+.error-code {
+    font-size: 120px; font-weight: 900; color: #e63946; text-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+    margin: 0; line-height: 1; animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+.error-message { font-size: 32px; color: #1d3557; margin: 20px 0; font-weight: 700; }
+.error-description { font-size: 18px; color: #495057; margin: 20px 0 40px; line-height: 1.6; }
+.fashion-icon { font-size: 80px; margin: 30px 0; animation: bounce 2s ease infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.back-button {
+    display: inline-block; padding: 18px 50px; background: #1d3557; color: #fff;
+    text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 16px;
+    transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(29, 53, 87, 0.3); margin: 20px 10px; border: 2px solid #1d3557;
+}
+.back-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(29, 53, 87, 0.4); background: #457b9d; border-color: #457b9d; }
+.back-button.secondary { background: transparent; color: #1d3557; border: 2px solid #1d3557; }
+.back-button.secondary:hover { background: #1d3557; color: #fff; }
+.error-links { margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 15px; border: 1px solid #e9ecef; }
+.error-links h3 { color: #1d3557; margin-bottom: 20px; font-size: 20px; }
+.error-links a { display: inline-block; color: #495057; text-decoration: none; margin: 5px 15px; transition: all 0.3s ease; font-weight: 500; }
+.error-links a:hover { color: #1d3557; transform: translateX(5px); }
+.error-links a::before { content: '→ '; opacity: 0; transition: all 0.3s ease; }
+.error-links a:hover::before { opacity: 1; }
+.decorative-line { width: 100px; height: 4px; background: linear-gradient(90deg, #e63946, #457b9d); margin: 20px auto; border-radius: 2px; }
+
+/* =========================================
+   АДАПТИВНОСТЬ (МОБИЛЬНАЯ ВЕРСИЯ)
+   ========================================= */
+@media (max-width: 768px) {
+    html, body, .wrapper { width: 100%; overflow-x: hidden; max-width: 100vw; }
+    .header, .main-nav, .footer { width: 100%; left: 0; right: 0; margin: 0; max-width: 100%; }
+    .header-inner, .nav-inner, .footer-inner { width: 100%; max-width: 100%; padding: 0 10px; }
+    .content-area { flex-direction: column; padding: 10px; width: 100%; max-width: 100%; }
+    .main, .sidebar { width: 100%; max-width: 100%; padding: 15px; box-sizing: border-box; }
+    .main img, .slider-container, .slide img, .content-img {
+        max-width: 100% !important; width: 100% !important; height: auto !important; box-sizing: border-box;
+    }
+    .main p, .main h1, .main h2, .main h3 {
+        word-wrap: break-word; overflow-wrap: break-word; hyphens: auto; max-width: 100%;
+    }
+    .site-name {
+        font-size: 16px;
+        margin-left: 8px;
+    }
+    .nav-list { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #2c2c2c; width: 100%; }
+    .nav-list.active { display: flex; }
+    .submenu { position: static; background: #252525; box-shadow: none; width: 100%; display: none; }
+    .nav-item:hover > .submenu { display: none; }
+    .nav-item.active > .submenu { display: block; }
+    .footer-inner { flex-direction: column; gap: 20px; }
+    .nav-link::after { bottom: 5px; }
+    .error-code { font-size: 80px; }
+    .error-message { font-size: 24px; }
+    .fashion-icon { font-size: 60px; }
+    .back-button { padding: 15px 40px; font-size: 14px; }
+}

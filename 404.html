@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Страница не найдена - 404">
+    <title>404 | Страница не найдена - Мода и Стиль</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://vk.com/ваш_профиль" title="Профиль разработчика ВКонтакте">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- БОКОВОЕ МЕНЮ -->
+<div class="sidebar-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label> 
+    <ul class="menu__box">
+        <li><a class="menu__item" href="index.html">Главная</a></li>
+        <li>
+            <label for="sub-menu-toggle" class="menu__item menu__item--has-sub">О моде ▼</label>
+            <input type="checkbox" id="sub-menu-toggle" style="display:none;">
+            <ul class="menu__submenu">
+                <li><a class="menu__item menu__item--sub" href="about.html">Стиль vs Мода</a></li>
+                <li><a class="menu__item menu__item--sub" href="trends.html">Тренды</a></li>
+            </ul>
+        </li>
+        <li><a class="menu__item" href="gallery.html">Галерея</a></li>
+        <li><a class="menu__item" href="developer.html">Разработчик</a></li>
+        <li><a class="menu__item" href="privacy.html">Конфиденциальность</a></li>
+    </ul>
+</div>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="./index.html" class="logo-link" title="На главную">
+                    <img src="img/logo.png" alt="Логотип Мода и Стиль" class="logo">
+                    <span class="site-name">Мода и Стиль</span>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="header-contact">
+                    <a href="https://www.bartc.by" title="Сайт колледжа" target="_blank" rel="noopener">www.bartc.by</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <ul class="nav-list" id="navMenu">
+                <li class="nav-item"><a href="./index.html" class="nav-link" title="Главная">Главная</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" title="Разделы">О моде ▼</a>
+                    <ul class="submenu">
+                        <li><a href="./about.html" class="nav-link" title="Стиль vs Мода">Стиль vs Мода</a></li>
+                        <li><a href="./trends.html" class="nav-link" title="Тренды">Тренды сезона</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="./gallery.html" class="nav-link" title="Галерея">Галерея</a></li>
+                <li class="nav-item"><a href="./developer.html" class="nav-link" title="Разработчик">Разработчик</a></li>
+                <li class="nav-item"><a href="./privacy.html" class="nav-link" title="Конфиденциальность">Конфиденциальность</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="error-container">
+        <div class="error-content">
+            <h1 class="error-code">404</h1>
+            <div class="decorative-line"></div>
+            <div class="fashion-icon">👗✨</div>
+            <h2 class="error-message">Страница не найдена. Повторите попытку позже</h2>
+            <p class="error-description">
+                Похоже, страница, которую вы ищете, больше не существует или была перемещена. 
+                Не переживайте — в мире моды такое случается! Вернитесь на главную и найдите что-то стильное.
+            </p>
+            
+            <div style="margin: 40px 0;">
+                <a href="./index.html" class="back-button" title="Вернуться на главную страницу">
+                    ← Вернуться на главную
+                </a>
+                <a href="./gallery.html" class="back-button secondary" title="Посмотреть галерею">
+                    Смотреть галерею →
+                </a>
+            </div>
+            
+            <div class="error-links">
+                <h3>🔍 Популярные разделы:</h3>
+                <a href="./about.html" title="О моде и стиле">О моде и стиле</a><br>
+                <a href="./trends.html" title="Тренды сезона">Тренды сезона</a><br>
+                <a href="./gallery.html" title="Галерея образов">Галерея образов</a><br>
+                <a href="./developer.html" title="О разработчике">О разработчике</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col"><h4>Навигация</h4><a href="./index.html" title="Главная">Главная</a><a href="./about.html" title="О моде">О моде</a><a href="./gallery.html" title="Галерея">Галерея</a></div>
+            <div class="footer-col"><h4>Информация</h4><a href="./developer.html" title="Разработчик">Разработчик</a><a href="./privacy.html" title="Политика">Конфиденциальность</a><a href="./sitemap.xml" title="Карта сайта">Карта сайта</a></div>
+            <div class="footer-col"><h4>Соцсети</h4><a href="https://vk.com" title="VK" target="_blank" rel="noopener">VK</a><a href="https://t.me" title="Telegram" target="_blank" rel="noopener">Telegram</a></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; <span id="year"></span> Мода и Стиль. Все права защищены.</p></div>
+    </footer>
+</div>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

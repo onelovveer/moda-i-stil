@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Информация о создателе сайта, навыки и контакты.">
+    <title>О разработчике | Мода и Стиль</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://vk.com/ваш_профиль" title="Профиль разработчика ВКонтакте">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- БОКОВОЕ МЕНЮ -->
+<div class="sidebar-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label> 
+    <ul class="menu__box">
+        <li><a class="menu__item" href="index.html">Главная</a></li>
+        <li>
+            <label for="sub-menu-toggle" class="menu__item menu__item--has-sub">О моде ▼</label>
+            <input type="checkbox" id="sub-menu-toggle" style="display:none;">
+            <ul class="menu__submenu">
+                <li><a class="menu__item menu__item--sub" href="about.html">Стиль vs Мода</a></li>
+                <li><a class="menu__item menu__item--sub" href="trends.html">Тренды</a></li>
+            </ul>
+        </li>
+        <li><a class="menu__item" href="gallery.html">Галерея</a></li>
+        <li><a class="menu__item" href="developer.html">Разработчик</a></li>
+        <li><a class="menu__item" href="privacy.html">Конфиденциальность</a></li>
+    </ul>
+</div>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="./index.html" class="logo-link" title="На главную">
+                    <img src="img/logo.png" alt="Логотип Мода и Стиль" class="logo">
+                    <span class="site-name">Мода и Стиль</span>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="header-contact">
+                    <a href="https://www.bartc.by" title="Сайт колледжа" target="_blank" rel="noopener">www.bartc.by</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <ul class="nav-list" id="navMenu">
+                <li class="nav-item"><a href="./index.html" class="nav-link" title="Главная">Главная</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" title="Разделы">О моде ▼</a>
+                    <ul class="submenu">
+                        <li><a href="./about.html" class="nav-link" title="Стиль vs Мода">Стиль vs Мода</a></li>
+                        <li><a href="./trends.html" class="nav-link" title="Тренды">Тренды сезона</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="./gallery.html" class="nav-link" title="Галерея">Галерея</a></li>
+                <li class="nav-item"><a href="./developer.html" class="nav-link" title="Разработчик">Разработчик</a></li>
+                <li class="nav-item"><a href="./privacy.html" class="nav-link" title="Конфиденциальность">Конфиденциальность</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-area">
+        <main class="main">
+            <h1>О разработчике сайта</h1>
+            <img src="img/developer.jpg" alt="Фото разработчика сайта" class="content-img" title="Автор проекта">
+            <p>Меня зовут Мисовский Андрей Дмитриевич. Этот проект создан в рамках учебной практики по дисциплине «Веб-программирование» и представляет собой полноценный HTML-каркас с адаптивной версткой, двухуровневой навигацией и семантической разметкой. В процессе работы я освоил принципы блочной компоновки, кросс-браузерной совместимости, оптимизации изображений и валидации кода по стандартам W3C. Особое внимание уделил доступности интерфейса, наличию атрибутов title и alt, а также логической структуре переходов между разделами.</p>
+            <p>Мои навыки включают работу с HTML5, CSS3, основами JavaScript, системами контроля версий и публикацией проектов на хостинге. В будущем планирую углубиться в frontend-фреймворки, изучение серверной части и создание интерактивных веб-приложений. Данный сайт о моде и стиле стал для меня полигоном для отработки навыков создания пользовательских интерфейсов, работающих с контентом. Я стремился сделать ресурс не только технически грамотным, но и визуально приятным, используя принципы минимализма и типографической иерархии. Связаться со мной можно через социальные сети, ссылки на которые размещены в подвале сайта. Благодарю за внимание и приглашаю изучить остальные разделы ресурса, чтобы убедиться в корректности работы всех элементов и навигации.</p>
+        </main>
+        <aside class="sidebar"><h3>Навыки</h3><ul><li><a href="#" title="HTML5/CSS3">HTML5 / CSS3</a></li><li><a href="#" title="JavaScript">JavaScript (ES6+)</a></li><li><a href="#" title="Адаптивная верстка">Адаптивная верстка</a></li><li><a href="#" title="Git">Система контроля версий Git</a></li></ul><h3>Документы</h3><ul><li><a href="./downloads/site-archive.zip" title="Скачать исходный код" download>📦 Архив сайта</a></li><li><a href="./downloads/practice-report.pdf" title="Скачать отчет по практике" download>📄 Отчет по практике</a></li></ul></aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col"><h4>Разделы</h4><a href="./index.html" title="Главная">Главная</a><a href="./about.html" title="О моде">О моде</a></div>
+            <div class="footer-col"><h4>Инфо</h4><a href="./privacy.html" title="Политика">Конфиденциальность</a><a href="./sitemap.xml" title="Карта">Sitemap</a></div>
+            <div class="footer-col"><h4>Соцсети</h4><a href="https://vk.com" title="VK" target="_blank" rel="noopener">VK</a><a href="https://t.me" title="TG" target="_blank" rel="noopener">Telegram</a></div>
+            <div class="footer-col"><h4>Контакты</h4><a href="https://www.bartc.by" title="Сайт колледжа" target="_blank" rel="noopener">www.bartc.by</a></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; <span id="year"></span> Мода и Стиль. Все права защищены.</p></div>
+    </footer>
+</div>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

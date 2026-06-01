@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сайт о моде и стиле: тренды, базовый гардероб, галерея образов и советы по созданию индивидуального стиля.">
+    <title>Главная | Мода и Стиль</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="author" href="https://vk.com/ваш_профиль" title="Профиль разработчика ВКонтакте">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- БОКОВОЕ МЕНЮ -->
+<div class="sidebar-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label> 
+    <ul class="menu__box">
+        <li><a class="menu__item" href="index.html">Главная</a></li>
+        <li>
+            <label for="sub-menu-toggle" class="menu__item menu__item--has-sub">О моде ▼</label>
+            <input type="checkbox" id="sub-menu-toggle" style="display:none;">
+            <ul class="menu__submenu">
+                <li><a class="menu__item menu__item--sub" href="about.html">Стиль vs Мода</a></li>
+                <li><a class="menu__item menu__item--sub" href="trends.html">Тренды</a></li>
+            </ul>
+        </li>
+        <li><a class="menu__item" href="gallery.html">Галерея</a></li>
+        <li><a class="menu__item" href="developer.html">Разработчик</a></li>
+        <li><a class="menu__item" href="privacy.html">Конфиденциальность</a></li>
+    </ul>
+</div>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="./index.html" class="logo-link" title="На главную">
+                    <img src="img/logo.png" alt="Логотип Мода и Стиль" class="logo">
+                    <span class="site-name">Мода и Стиль</span>
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="header-contact">
+                    <a href="https://www.bartc.by" title="Сайт колледжа" target="_blank" rel="noopener">www.bartc.by</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <ul class="nav-list" id="navMenu">
+                <li class="nav-item"><a href="./index.html" class="nav-link" title="Главная страница">Главная</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" title="Разделы о моде">О моде ▼</a>
+                    <ul class="submenu">
+                        <li><a href="./about.html" class="nav-link" title="Различия понятий">Стиль vs Мода</a></li>
+                        <li><a href="./trends.html" class="nav-link" title="Обзор тенденций">Тренды</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="./gallery.html" class="nav-link" title="Галерея образов">Галерея</a></li>
+                <li class="nav-item"><a href="./developer.html" class="nav-link" title="Информация о создателе">Разработчик</a></li>
+                <li class="nav-item"><a href="./privacy.html" class="nav-link" title="Условия использования данных">Конфиденциальность</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-area">
+        <main class="main">
+            <h1>Добро пожаловать в пространство стиля</h1>
+            <p>Мода и стиль часто воспринимаются как синонимы, однако в реальности это две разные философии самовыражения. Мода — это индустрия, диктуемая дизайнерами, сезонными показами и маркетинговыми кампаниями. Она меняется каждые несколько месяцев, заставляя потребителя следовать новым цветовым палитрам, силуэтам и материалам. Стиль же — это внутренний компас человека, его умение отбирать из потока модных предложений то, что резонирует с его характером, образом жизни и эстетическими предпочтениями. На этом сайте мы не гонимся за слепым подражанием подиумным образам. Наша цель — помочь вам выстроить осознанный гардероб, понять законы цветовых сочетаний, научиться работать с пропорциями и создать визуальный язык, который будет говорить о вас без слов.</p>
+            <p>В эпоху быстрой моды и цифрового потребления важно уметь отделять качественное от одноразового. Мы публикуем аналитические материалы о тканях, разбираем ошибки при подборе обуви, показываем, как одна базовая вещь может стать основой для десяти разных луков. Наши гиды по уходу за одеждой продлят жизнь вашим любимым вещам, а разборы уличного стиля докажут, что индивидуальный стиль рождается не в бутиках, а в повседневных экспериментах. Изучайте материалы, сохраняйте полезные чек-листы и формируйте свой уникальный визуальный код. Помните: настоящий стиль не требует огромных бюджетов. Он требует внимания к деталям, понимания собственных пропорций и смелости быть собой.</p>
+
+            <div class="auth-section-full">
+    <div class="auth-deco auth-deco-1"></div>
+    <div class="auth-deco auth-deco-2"></div>
+    
+    <div class="auth-container">
+        <h2 class="auth-title">Вход в аккаунт</h2>
+        <p class="auth-subtitle">Управляйте своим стилем персонально</p>
+        
+        <form action="./404.html" method="get" title="Форма авторизации" class="auth-form-wide">
+            <div class="auth-field">
+                <label for="email">Электронная почта</label>
+                <input type="text" id="email" name="email" class="auth-input" placeholder="your@email.com" required title="Введите ваш email адрес">
+            </div>
+            
+            <div class="auth-field">
+                <label for="pass">Пароль</label>
+                <input type="password" id="pass" name="pass" class="auth-input" placeholder="••••••••" required title="Введите ваш пароль">
+            </div>
+            
+            <button type="submit" class="auth-submit-btn" title="Отправить данные формы">Войти</button>
+            
+            <div class="auth-links">
+                <a href="#" class="auth-link" title="Восстановить доступ">Забыли пароль?</a>
+            </div>
+        </form>
+    </div>
+</div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="./about.html" title="История и понятия">О моде и стиле</a></li>
+                <li><a href="./trends.html" title="Актуальные коллекции">Тренды сезона</a></li>
+                <li><a href="./gallery.html" title="Визуальные примеры">Галерея образов</a></li>
+            </ul>
+            <h3>Документы</h3>
+            <ul>
+                <li><a href="./downloads/site-archive.zip" title="Скачать исходный код" download>📦 Архив сайта</a></li>
+                <li><a href="./downloads/practice-report.pdf" title="Скачать отчет по практике" download>📄 Отчет по практике</a></li>
+                <li><a href="https://www.bartc.by" title="Перейти на сайт учебного заведения" target="_blank" rel="noopener">🎓 Сайт колледжа</a></li>
+            </ul>
+            <h3>Карта сайта</h3>
+            <a href="./sitemap.xml" title="Просмотреть XML карту сайта" download>📑 Sitemap.xml</a>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="./index.html" title="Главная">Главная</a>
+                <a href="./about.html" title="О моде">О моде</a>
+                <a href="./gallery.html" title="Галерея">Галерея</a>
+            </div>
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <a href="./developer.html" title="Об авторе">О разработчике</a>
+                <a href="./privacy.html" title="Политика конфиденциальности">Конфиденциальность</a>
+                <a href="./sitemap.xml" title="Карта сайта">Карта сайта</a>
+            </div>
+            <div class="footer-col">
+                <h4>Социальные сети</h4>
+                <a href="https://vk.com" title="ВКонтакте" target="_blank" rel="noopener">ВКонтакте</a>
+                <a href="https://t.me" title="Telegram" target="_blank" rel="noopener">Telegram</a>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="https://www.bartc.by" title="Сайт колледжа" target="_blank" rel="noopener">www.bartc.by</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Мода и Стиль. Все права защищены.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
