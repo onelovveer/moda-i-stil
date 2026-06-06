@@ -298,6 +298,30 @@ ul { list-style: none; }
 .auth-link:hover { color: #C5A059; }
 
 /* =========================================
+   СТИЛИ ДЛЯ БЛОКА "ЕЩЁ НЕТ АККАУНТА?"
+   ========================================= */
+
+/* Делаем текст серым, как "Забыли пароль?" */
+.auth-switch {
+    color: #777777 !important; /* Серый цвет, как у .auth-link */
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Ссылка "Зарегистрироваться" остаётся золотой */
+.auth-switch a {
+    color: #C5A059 !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    color: #e0b86b !important;
+    text-decoration: underline;
+}
+
+/* =========================================
    7. ГАЛЕРЕЯ, ФУТЕР, 404
    ========================================= */
 .slider-container { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #111; }
