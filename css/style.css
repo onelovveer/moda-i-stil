@@ -393,16 +393,3 @@ ul { list-style: none; }
     
     .auth-section-full { padding: 25px; }
 }
-
-/* Делаем текст "Ещё нет аккаунта?" серым, как "Забыли пароль?" */
-.auth-switch {
-    color: #777777 !important; /* Серый цвет как у "Забыли пароль?" */
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.auth-switch a {
-    color: #C5A059 !important; /* Золотая ссылка "Зарегистрироваться" */
-    font-weight: 600;
-}
